@@ -77,7 +77,109 @@ public class StringTest {
 //        System.out.println(substring);
 //    }
 
-    public static void main(String[] args){
-        System.out.println(-1 >>> 1);
+//    public static void main(String[] args){
+//        System.out.println(-1 >>> 1);
+//    }
+
+    /**
+     * 5、测试例子5：三种替换相关的方法的演示代码
+     *  replace 、replaceAll、replaceFirst
+     */
+//    public static void main(String[] args){
+//        String str ="hello word !!";
+//        System.out.println("替换之前 :"+str);
+//
+//        //替换掉所有的l为d ---- 字符''
+//        str = str.replace('l','d');
+//        System.out.println("替换所有字符 :"+str);
+//        //替换掉所有的d为l ---- 字符串""
+//        str = str.replaceAll("d","l");
+//        System.out.println("替换全部 :"+str);
+//
+//        //替换掉第一个l字符
+//        str = str.replaceFirst("l","");
+//        System.out.println("替换第一个 l :"+str);
+//    }
+
+    /**
+     * 6、测试例子6：拆分方法的演示代码
+     * split
+     */
+//    public static void main(String[] args) {
+//        String s = "boo:and:foo";
+//        // 我们对 s 进行了各种拆分，演示的代码和结果是：
+//        String[] split1 = s.split(":");
+//        String[] split2 = s.split(":", 2);
+//        String[] split3 = s.split(":", 5);
+//        String[] split4 = s.split(":", -2);
+//        String[] split5 = s.split("o");
+//        String[] split6 = s.split("o", 2);
+//        printArray(split1);
+//        printArray(split2);
+//        printArray(split3);
+//        printArray(split4);
+//        printArray(split5);
+//        printArray(split6);
+//
+//        //如果字符串里面有一些空值呢，拆分的结果
+//        String a =",a,,b,";
+//        String[] split7 = a.split(",");
+//        printArray(split7);
+//    }
+//
+//    private static void printArray(String[] split) {
+//        StringBuilder stringBuilder = new StringBuilder();
+//        stringBuilder.append("结果是:[");
+//        for (int i = 0; i <= split.length - 1; i++) {
+//            stringBuilder.append('"');
+//            stringBuilder.append(split[i]);
+//            stringBuilder.append('"');
+//            if (i < split.length - 1) {
+//                stringBuilder.append(",");
+//            }
+//        }
+//        stringBuilder.append("]");
+//        System.out.println(stringBuilder.toString());
+//    }
+
+    /**
+     * 7、测试例子7：Guava拆分字符串，快速去掉空值
+     * Splitter
+     */
+//    public static void main(String[] args) {
+//        String a = ",a, ,  b  c ,";
+//        // Splitter 是 Guava 提供的 API
+//        List<String> list = Splitter.on(',')
+//                .trimResults()// 去掉空格
+//                .omitEmptyStrings()// 去掉空值
+//                .splitToList(a);
+//        System.out.println("Guava 去掉空格的分割方法" + JSON.toJSONString(list));
+//    }
+
+    /**
+     * 8、测试例子8：字符串合并
+     * join
+     * @param args
+     */
+    public static void main(String[] args) {
+        String s = "lihao";
+        String s1 = "wangjingweng";
+        String s2=String.join(",", s);
+        System.out.println(s2);
     }
+
+    /**
+     * 9、测试例子9：Guava支持多个字符串的合并，还帮助我们去掉了 List 中的空值
+     *  Joiner
+     * @param args
+     */
+//    public static void main(String[] args) {
+//        // 依次 join 多个字符串，Joiner 是 Guava 提供的 API
+//        Joiner joiner = Joiner.on(",").skipNulls();
+//        String result = joiner.join("hello", null, "china");
+//        System.out.println("依次 join 多个字符串:" + result);
+//
+//        List<String> list = Lists.newArrayList(new String[]{"hello", "china", null});
+//        System.out.println("自动删除 list 中空值:" + joiner.join(list));
+//    }
 }
