@@ -161,12 +161,12 @@ public class StringTest {
      * join
      * @param args
      */
-    public static void main(String[] args) {
-        String s = "lihao";
-        String s1 = "wangjingweng";
-        String s2=String.join(",", s);
-        System.out.println(s2);
-    }
+//    public static void main(String[] args) {
+//        String s = "lihao";
+//        String s1 = "wangjingweng";
+//        String s2=String.join(",", s);
+//        System.out.println(s2);
+//    }
 
     /**
      * 9、测试例子9：Guava支持多个字符串的合并，还帮助我们去掉了 List 中的空值
