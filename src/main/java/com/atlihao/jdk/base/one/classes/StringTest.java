@@ -1,4 +1,11 @@
-package com.atlihao.jdk.base.one;
+package com.atlihao.jdk.base.one.classes;
+
+import com.google.common.base.Joiner;
+import com.google.common.collect.Lists;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
+
+import java.util.List;
 
 /**
  * @author lihao
@@ -6,6 +13,7 @@ package com.atlihao.jdk.base.one;
  * @Since 2020/1/30
  * @Description String类的测试代码
  */
+@Slf4j
 public class StringTest {
 
     /**
