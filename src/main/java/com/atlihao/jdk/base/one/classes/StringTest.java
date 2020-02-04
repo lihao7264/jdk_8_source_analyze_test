@@ -1,11 +1,7 @@
 package com.atlihao.jdk.base.one.classes;
 
-import com.google.common.base.Joiner;
-import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-
-import java.util.List;
 
 /**
  * @author lihao
@@ -190,4 +186,37 @@ public class StringTest {
 //        List<String> list = Lists.newArrayList(new String[]{"hello", "china", null});
 //        System.out.println("自动删除 list 中空值:" + joiner.join(list));
 //    }
+
+    /**
+     * 10、测试例子10： 得到指定下标处的字符（Unicode值）。
+     * String类的codePointAt
+     */
+    @Test
+    public void testCodePointAt() {
+        String s = "lihao";
+        int codePointAt = s.codePointAt(4);
+        log.info("test codePointAt ,unicode:{},char:{}",codePointAt,(char) codePointAt);
+    }
+
+    /**
+     * 11、测试例子11： 得到指定下标值前一个字符的unicode值。
+     * String类的codePointBefore
+     */
+    @Test
+    public void testCodePointBefore() {
+        String s = "lihao";
+        int codePointBefore = s.codePointBefore(4);
+        log.info("test codePointBefore ,unicode:{},char:{}",codePointBefore,(char) codePointBefore);
+    }
+
+    /**
+     * 11、测试例子11： 得到此String的指定文本范围内的字符个数(指定下标范围内)
+     * String类的codePointCount
+     */
+    @Test
+    public void testCodePointCount(){
+        String s = "lihao";
+        int count = s.codePointCount(1,4);
+        log.info("test codePointCount ,count:{}",count);
+    }
 }

@@ -9,7 +9,7 @@ import java.util.List;
  * @author lihao
  * @ClassName ParentStaticClass
  * @Since 2020/2/1
- * @Description  static 修饰的类变量、方法块和静态方法的初始化时机中的测试代码的父类
+ * @Description  static 修饰的类变量、方法块和静态方法以及非代码块的初始化时机中的测试代码的父类
  */
 @Slf4j
 public class ParentStaticClass {
