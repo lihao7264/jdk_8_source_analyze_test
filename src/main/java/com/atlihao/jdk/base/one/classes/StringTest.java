@@ -3,6 +3,8 @@ package com.atlihao.jdk.base.one.classes;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.io.UnsupportedEncodingException;
+
 /**
  * @author lihao
  * @ClassName StringTest
@@ -195,7 +197,7 @@ public class StringTest {
     public void testCodePointAt() {
         String s = "lihao";
         int codePointAt = s.codePointAt(4);
-        log.info("test codePointAt ,unicode:{},char:{}",codePointAt,(char) codePointAt);
+        log.info("test codePointAt ,unicode:{},char:{}", codePointAt, (char) codePointAt);
     }
 
     /**
@@ -206,7 +208,7 @@ public class StringTest {
     public void testCodePointBefore() {
         String s = "lihao";
         int codePointBefore = s.codePointBefore(4);
-        log.info("test codePointBefore ,unicode:{},char:{}",codePointBefore,(char) codePointBefore);
+        log.info("test codePointBefore ,unicode:{},char:{}", codePointBefore, (char) codePointBefore);
     }
 
     /**
@@ -214,9 +216,55 @@ public class StringTest {
      * String类的codePointCount
      */
     @Test
-    public void testCodePointCount(){
+    public void testCodePointCount() {
         String s = "lihao";
-        int count = s.codePointCount(1,4);
-        log.info("test codePointCount ,count:{}",count);
+        int count = s.codePointCount(1, 4);
+        log.info("test codePointCount ,count:{}", count);
+    }
+
+    /**
+     * 12、测试例子12：得到String中的下标，该下标与给定的index偏移codePointOffset个代码点
+     * String类的offsetByCodePoints
+     */
+    @Test
+    public void testOffsetByCodePoints() {
+        String s = "lihao";
+        int count = s.offsetByCodePoints(1, 3);
+        log.info("test offsetByCodePoints ,offsetByCodePoints:{}", count);
+    }
+
+    /**
+     * 13、测试例子13：将字符串中的字符复制到目标字符数组中。
+     * String类的getChars
+     */
+    @Test
+    public void testGetChars() {
+        String s = "lihao";
+        char dest[] = new char[2];
+        s.getChars(1, 3, dest,0);
+        log.info("test getChars ,dest:{}", dest);
+    }
+
+    /**
+     * 14、测试例子14：使用命名的字符集将此字符串编码为字节序列，并将结果存储到新的字节数组中。
+     * String类的getBytes
+     */
+    @Test
+    public void testGetBytes() throws UnsupportedEncodingException {
+        String s = "lihao";
+        byte[] bytes = s.getBytes("utf-8");
+        log.info("test getBytes ,bytes:{}", bytes);
+    }
+
+    /**
+     * 15、测试例子15：将此字符串与指定的StringBuffer比较
+     * String类的contentEquals
+     */
+    @Test
+    public void testContentEquals() {
+        String s = "lihao";
+        StringBuffer stringBuffer=new StringBuffer();
+        boolean equals = s.contentEquals(stringBuffer);
+        log.info("test contentEquals ,equals:{}", equals);
     }
 }
