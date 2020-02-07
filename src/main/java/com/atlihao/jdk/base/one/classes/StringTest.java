@@ -241,7 +241,7 @@ public class StringTest {
     public void testGetChars() {
         String s = "lihao";
         char dest[] = new char[2];
-        s.getChars(1, 3, dest,0);
+        s.getChars(1, 3, dest, 0);
         log.info("test getChars ,dest:{}", dest);
     }
 
@@ -263,8 +263,91 @@ public class StringTest {
     @Test
     public void testContentEquals() {
         String s = "lihao";
-        StringBuffer stringBuffer=new StringBuffer();
+        StringBuffer stringBuffer = new StringBuffer();
         boolean equals = s.contentEquals(stringBuffer);
         log.info("test contentEquals ,equals:{}", equals);
+    }
+
+    /**
+     * 16、测试例子16：忽略大小写比较字符串
+     * String类的equalsIgnoreCase
+     */
+    @Test
+    public void testEqualsIgnoreCase() {
+        String s1 = "lihao";
+        String s2 = "Lihao";
+        boolean equals = s1.equalsIgnoreCase(s2);
+        log.info("test equalsIgnoreCase ,equals:{}", equals);
+    }
+
+    /**
+     * 17、测试例子17：比较两个字符串
+     * String类的compareTo
+     */
+    @Test
+    public void testCompareTo() {
+        String s1 = "lihao1";
+        String s2 = "lihao";
+        int difference= s1.compareTo(s2);
+        log.info("test compareTo,difference:{}",difference);
+    }
+
+    /**
+     * 18、测试例子18：比较两个字符串(忽略大小写差异)
+     * String类的compareToIgnoreCase
+     */
+    @Test
+    public void testCompareToIgnoreCase() {
+        String s1 = "lihao1";
+        String s2 = "Lihao";
+        int difference = s1.compareToIgnoreCase(s2);
+        log.info("test compareToIgnoreCase,difference:{}", difference);
+    }
+
+    /**
+     * 19、测试例子19：检测字符串是否以某个前缀开始（从某个偏移开始）
+     * String类的startsWith
+     */
+    @Test
+    public void testStartsWith() {
+        String s1 = "lihao1";
+        String s2 = "ihao";
+        boolean istSuccess = s1.startsWith(s2, 1);
+        log.info("test startsWith,istSuccess:{}",istSuccess);
+    }
+
+    /**
+     * 20、测试例子20：检查是否以某个字符串结尾
+     * String类的endsWith
+     */
+    @Test
+    public void testEndsWith() {
+        String s1 = "lihao1";
+        String s2 = "1";
+        boolean isSuccess= s1.endsWith(s2);
+        log.info("test endsWith,isSuccess:{}", isSuccess);
+    }
+
+    /**
+     * 21、测试例子21：获得字符串的哈希码
+     * String类的hashCode
+     */
+    @Test
+    public void testHashCode() {
+        String s1 = "lihao1";
+        int hashCode = s1.hashCode();
+        log.info("test hashCode,hashCode:{}", hashCode);
+    }
+
+    /**
+     * 22、测试例子22：获得指定字符首次出现在此字符串中的下标
+     * String类的indexOf
+     */
+    @Test
+    public void testIndexOf() {
+        String s1 = "lihao1";
+        //a字符(97)的下标
+        int index = s1.indexOf(97);
+        log.info("test indexOf,index:{}", index);
     }
 }
