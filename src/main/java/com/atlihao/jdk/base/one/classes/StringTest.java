@@ -288,8 +288,8 @@ public class StringTest {
     public void testCompareTo() {
         String s1 = "lihao1";
         String s2 = "lihao";
-        int difference= s1.compareTo(s2);
-        log.info("test compareTo,difference:{}",difference);
+        int difference = s1.compareTo(s2);
+        log.info("test compareTo,difference:{}", difference);
     }
 
     /**
@@ -313,7 +313,7 @@ public class StringTest {
         String s1 = "lihao1";
         String s2 = "ihao";
         boolean istSuccess = s1.startsWith(s2, 1);
-        log.info("test startsWith,istSuccess:{}",istSuccess);
+        log.info("test startsWith,istSuccess:{}", istSuccess);
     }
 
     /**
@@ -324,7 +324,7 @@ public class StringTest {
     public void testEndsWith() {
         String s1 = "lihao1";
         String s2 = "1";
-        boolean isSuccess= s1.endsWith(s2);
+        boolean isSuccess = s1.endsWith(s2);
         log.info("test endsWith,isSuccess:{}", isSuccess);
     }
 
@@ -350,4 +350,127 @@ public class StringTest {
         int index = s1.indexOf(97);
         log.info("test indexOf,index:{}", index);
     }
+
+    /**
+     * 23、测试例子23：返回指定字符在此字符串内最后一次出现的下标
+     * String类的lastIndexOf
+     */
+    @Test
+    public void testLastIndexOf() {
+        String s1 = "lihaao1";
+        //返回a字符(97)在此字符串内最后一次出现的下标
+        int lastIndex = s1.lastIndexOf(97);
+        log.info("test lastIndexOf,lastIndex:{}", lastIndex);
+    }
+
+    /**
+     * 24、测试例子24：返回一个字符串的子字符串
+     * String类的substring
+     */
+    @Test
+    public void testSubstring() {
+        String s1 = "lihao1";
+        //获取hao1字符串
+        String substring = s1.substring(2);
+        log.info("test substring,substring:{}", substring);
+    }
+
+    /**
+     * 25、测试例子25：返回一个字符串的子字符序列
+     * String类的subSequence
+     */
+    @Test
+    public void testSubSequence() {
+        String s1 = "lihao1";
+        //获取ha的字符序列(包括下标2，不包括下标4)
+        CharSequence charSequence = s1.subSequence(2, 4);
+        log.info("test subSequence,charSequence:{}", charSequence);
+    }
+
+    /**
+     * 26、测试例子26：将入参字符串连接到当前字符串末尾
+     * String类的concat
+     */
+    @Test
+    public void testConcat() {
+        String s1 = "lihao";
+        String s2 = "1";
+        //将s2字符串连接到s1末尾
+        String concatStr = s1.concat(s2);
+        log.info("test concat,concatStr:{}", concatStr);
+    }
+
+    /**
+     * 27、测试例子27：字符串中是否含有某些字符(根据正则表达式来匹配)
+     * String类的matches
+     */
+    @Test
+    public void testMatches() {
+        String s1 = "lihao";
+        String s2 = "^*l*";
+        //将s2字符串连接到s1末尾
+        boolean match = s1.matches(s2);
+        log.info("test matches,match:{}", match);
+    }
+
+    /**
+     * 28、测试例子28：字符串是否包含某个字符序列
+     * String类的contains
+     */
+    @Test
+    public void testContains() {
+        String s1 = "lihao";
+        //将s2字符串连接到s1末尾
+        boolean contain = s1.contains("ha");
+        log.info("test contains,contain:{}", contain);
+    }
+
+    /**
+     * 29、测试例子29：去除字符串前后的空格
+     * String类的trim()
+     */
+    @Test
+    public void testTrim() {
+        String s1 = " lihao ";
+        //去除s1字符串前后的空格
+        String trimStr = s1.trim();
+        log.info("test trim,trimStr:{}", trimStr);
+    }
+
+    /**
+     * 30、测试例子30：获取字符串的字符数组
+     * String类的toCharArray()
+     */
+    @Test
+    public void testToCharArray() {
+        String s1 = "lihao";
+        //获取s1字符串的字符数组
+        char[] chars = s1.toCharArray();
+        log.info("test toCharArray,chars:{}", chars);
+    }
+
+    /**
+     * 31、测试例子31：字符转为字符串
+     * String类的valueOf
+     */
+    @Test
+    public void testValueOf() {
+        //字符l转为字符串
+        String str = String.valueOf('l');
+        log.info("test valueOf,str:{}", str);
+    }
+
+    /**
+     * 31、测试例子31：字符串的intern方法
+     * String类的intern
+     */
+    @Test
+    public void testIntern() {
+        String s1 = "lihao";
+        //字符l转为字符串
+        String internStr = s1.intern();
+        log.info("test intern,internStr:{}", internStr);
+    }
+
+
 }

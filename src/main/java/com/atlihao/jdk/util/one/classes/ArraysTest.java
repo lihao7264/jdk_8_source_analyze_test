@@ -1,4 +1,4 @@
-package com.atlihao.jdk.base.one.classes;
+package com.atlihao.jdk.util.one.classes;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.ImmutableList;
