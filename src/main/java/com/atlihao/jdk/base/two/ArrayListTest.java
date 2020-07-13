@@ -36,4 +36,27 @@ public class ArrayListTest {
         // 因为jvm不清楚你存储的Object真实类型是不是String
         objArray[0] = new Object();
     }
+
+
+    /**
+     * 2、测试例子2：1 有一个 ArrayList，数据是 2、3、3、3、4，中间有三个 3，现在我通过下面代码的方式，想把值是3的元素删除
+     *   结果：不能删除干净，最终删除的结果是 2、3、4，有一个 3 删除不掉。
+     *   原因：每次删除一个元素后，该元素后面的元素就会往前移动，而此时循环的i在不断地增长，最终会使每次删除3的后一个3被遗漏，导致删除不掉
+     */
+    @Test
+    public void testRemove(){
+        List<String> list = new ArrayList<String>() {{
+            add("2");
+            add("3");
+            add("3");
+            add("3");
+            add("4");
+        }};
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).equals("3")) {
+                list.remove(i);
+            }
+        }
+        log.info("test remove result:{}",list);
+    }
 }
